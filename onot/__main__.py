@@ -7,8 +7,8 @@ from PyQt6.QtGui import QAction, QIcon
 # SPDX-License-Identifier: Apache-2.0
 
 from onot.tools import create_notice
-from PyQt6.QtWidgets import QWidget, QApplication, QFileDialog, QTextEdit, QMainWindow, QPushButton, QBoxLayout
-import sys
+from onot.log import log_setting
+
 
 
 class MyApp(QMainWindow):
@@ -39,9 +39,7 @@ class MyApp(QMainWindow):
                 self.textEdit.setText(data)
 
 def main():
-    app = QApplication(sys.argv)
-    ex = MyApp()
-    sys.exit(app.exec())
+    log_setting.init()
     create_notice.main()
 
 
